@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한끼슥싹</title>
+
+    <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/category.css' %}">
+    <link rel="stylesheet" type = 'text/css' href = "{% static 'css/main.css' %}">
+</head>
+<body>
+    <div class="header">
+        <img src="{% static 'image/Logo.svg' %}" onclick="location.href='/home'"/>
+    </div>
+
+    <div class="content">
+        <div class="img-box">
+            <img src="{% static 'image/knifeWithSpoon.svg' %}">
+        </div>
+        <div class="text-box">
+            <h2>카테고리 선택</h2>
+        </div>
+
+        <div class="data-box">
+            <div class="tag-box">
+                <p>내가 가지고있는 재료</p>
+
+                <div class="list-box">
+                    {% for i in foodname %}
+                        <div class="list color{{ forloop.counter }}">{{ i.foodname }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="category-box">
+                <p>카테고리 찾기</p>
+                <div class="input-box">
+                    <img src="{% static 'image/search.svg' %}"/>
+                    <input type="text" id="category" onchange="CheckSearch(event)" placeholder="카테고리를 입력해주세요"/>
+                </div>
+
+                <div class="list-box" id="list-box">
+                    <div class="list" onclick="SubmitList(event)">찌개</div>
+                    <div class="list" onclick="SubmitList(event)">파스타</div>
+                    <div class="list" onclick="SubmitList(event)">밥</div>
+                    <div class="list" onclick="SubmitList(event)">찜</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <form id="secret-form" action="{% url 'select' %}" method="POST">
+        <!-- 여기다가 작업하셈 -->
+        {% csrf_token %}
+        <input type="text" id="form-category" value="" name="category"/>
+    </form>
+
+    <script src="{% static 'js/category.js' %}"></script>
+</body>
+</html>

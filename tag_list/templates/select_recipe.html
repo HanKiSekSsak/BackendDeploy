@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한끼슥싹</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <div class="header">
+        <img src="{% static 'image/Logo.svg' %}" onclick="location.href='/home'" class="logo"/>
+    </div>
+    <hr>
+    <div class="recipe">
+
+        <div class="icon-box">
+            <img src="{% static 'image/interests.png' %}" class="interests"/>
+            <p>레시피 고르기</p>
+        </div>
+
+        <div class="refresh-box">
+            <div class="material-symbols-outlined" onclick="location.reload();" style="color:white;">refresh
+                    <p>새로고침</p>
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <div class="content">
+            <div class="top">
+                <div class="content" onclick="SelectRecipe(event)">
+                    <div class="content-data">
+                        <img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/03/24/82c6469f43fd99d4b8481366b6c343ea1.jpg"/>
+                            <p>고추장찌개</p>
+                    </div>
+                </div>
+                <div class="content" onclick="SelectRecipe(event)">
+                    <div class="content-data">
+                        <img src="https://recipe1.ezmember.co.kr/cache/recipe/2017/06/28/e643ab1315aa7fd9e5497dd3bc310c2a1.jpg"/>
+                            <p>순두부찌개</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="end">
+                <div class="content" onclick="SelectRecipe(event)">
+                    <div class="content-data">
+                        <img src="https://recipe1.ezmember.co.kr/cache/recipe/2017/02/10/bfacc5beacd1cdd7edd264c2486e01fd1.jpg"/>
+                            <p>된장찌개</p>
+                    </div>
+                </div>
+                <div class="content" onclick="SelectRecipe(event)">
+                    <div class="content-data">
+                        <img src="https://recipe1.ezmember.co.kr/cache/recipe/2017/02/02/82a199e83078f6c5d8c21c93ffcc72841.jpg"/>
+                        <p>참치김치찌개</p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        
+        <form class="secret-form" id="secret-form" action="{% url 'recipe' %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="recipe" id="recipe-name" value=""/>
+        </form>
+
+        <script src="{% static 'js/selectRecipe.js' %}"></script>
+</body>
+</html>

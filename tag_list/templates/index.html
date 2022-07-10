@@ -1,0 +1,11 @@
+<h1>로그인, 로그아웃, 회원가입 페이지입니다.</h1>
+
+{% if user.is_authenticated %}
+<p>안녕하세요, {{ user.username }}님!</p><br/><br/>
+<a href="{% url 'logout' %}">로그아웃</a>
+{% else %}
+<p>아직 로그인 되지 않았습니다.</p><br/>
+<a href="{% url 'login' %}">로그인</a><br/><br/>
+<a href="{% url 'register' %}">회원가입</a>
+{% endif %}
+<br/>

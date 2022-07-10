@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한끼슥싹</title>
+
+    <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" type = 'text/css' href = "{% static 'css/main.css' %}">
+</head>
+<body>
+    <div class="header">
+        <img src = "{% static 'image/Logo.svg' %}" onclick="location.href='/home'"/>
+    </div>
+
+    <div class="content">
+        <div class="user-box">
+            <h2>{{ user.username }}님 환영합니다</h2>
+        </div>
+
+        <div class="ingredient-box">
+            <h2>{{ user.username }}님의 재료</h2>
+                <div class="list-box">
+                    {% for i in foodname %}
+                        <div class="list color{{ forloop.counter }}">{{ i.foodname }}</div>
+                    {% endfor %}
+                </div>
+        </div> 
+
+
+        <div class="menu-box">
+            <div id="ingredient-btn" class="menu color1">
+                <h2>재료 보러가기</h2>
+            </div>
+            <div id="category-btn" class="menu color2">
+                <h2>카테고리 보러가기</h2>
+            </div>
+            <div id="barcode-btn" class="menu color3">
+                <h2>재료 등록하기</h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
