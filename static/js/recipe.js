@@ -26,6 +26,7 @@ window.onload = ()=>{
 
         let ingredientData = splitData[1].split('\r\n');
         console.log(splitData[1]);
+        console.log(ingredientData);
         let recipeData = splitData[2].split("asdfasdfasfd");
         let imageData = splitData[3].split('\n');
         console.log(imageData)
