@@ -20,7 +20,7 @@ window.onload = ()=>{
         console.log(error);
     })
 
-    axios.get("http://localhost:3000/data/"+category+"/"+recipe)
+    axios.get("http://3.15.209.91:3000/data/"+category+"/"+recipe)
     .then(response=>{
         let splitData = response.data.split("---");
 
