@@ -20,11 +20,12 @@ window.onload = ()=>{
         console.log(error);
     })
 
-    axios.get("http://3.15.209.91:3000/data/"+category+"/"+recipe)
+    axios.get("http://localhost:3000/data/"+category+"/"+recipe)
     .then(response=>{
         let splitData = response.data.split("---");
 
         let ingredientData = splitData[1].split('\r\n');
+        console.log(splitData[1]);
         let recipeData = splitData[2].split("asdfasdfasfd");
         let imageData = splitData[3].split('\n');
         console.log(imageData)
