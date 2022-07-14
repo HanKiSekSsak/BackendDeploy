@@ -7,7 +7,7 @@ window.onload = ()=>{
     let category = localStorage.getItem("category");
     let recipe = localStorage.getItem("recipe");
 
-    axios.get("http://localhost:3000/recipe/")
+    axios.get("http://3.15.209.91:3000/recipe/")
     .then(response=>{
         for(i in response.data[category]){
             if(response.data[category][i].name == recipe){
@@ -20,7 +20,7 @@ window.onload = ()=>{
         console.log(error);
     })
 
-    axios.get("http://localhost:3000/data/"+category+"/"+recipe)
+    axios.get("http://3.15.209.91:3000/data/"+category+"/"+recipe)
     .then(response=>{
         let splitData = response.data.split("---");
 

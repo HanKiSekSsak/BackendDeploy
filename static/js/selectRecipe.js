@@ -20,7 +20,7 @@ let SelectRecipe = (e)=>{
 
 window.onload = ()=>{
     category = localStorage.getItem("category");
-    axios.get("http://localhost:3000/recipe")
+    axios.get("http://3.15.209.91:3000/recipe")
     .then(response =>{
         RecipeObject = response.data;
         let html = ""
