@@ -12,6 +12,9 @@
 
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" type = 'text/css' href = "{% static 'css/recipe.css' %}">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
     <div class="header">
@@ -24,16 +27,16 @@
         </div>
 
         <div class="text-box">
-            <h2>순두부찌개</h2>
+            <h2 id="real-name">순두부찌개</h2>
         </div>
 
         <div class="image-box">
-            <img src="https://recipe1.ezmember.co.kr/cache/recipe/2017/06/28/e643ab1315aa7fd9e5497dd3bc310c2a1.jpg"/>
+            <img id="thumbnail" src="https://recipe1.ezmember.co.kr/cache/recipe/2017/06/28/e643ab1315aa7fd9e5497dd3bc310c2a1.jpg"/>
         </div>
 
-        <div class="ingredient-box">
+        <div class="ingredient-box" id="ingredient-box">
             <h2>재료</h2>
-            <div class="list">
+            <!-- <div class="list">
                 <p>다진돼지고기</p>
                 <p>5T</p>
             </div>
@@ -96,13 +99,13 @@
             <div class="list">
                 <p>후추</p>
                 <p>4알</p>
-            </div>
+            </div> -->
         </div>
 
-        <div class="recipe-box">
+        <div class="recipe-box" id="recipe-box">
             <h2>조리 순서</h2>
 
-            <div class="list">
+            <!-- <div class="list">
                 <div class="text">
                     <h2>1.</h2>
                     <ul>
@@ -227,7 +230,7 @@
                 <div class="image">
                     <img src="https://recipe1.ezmember.co.kr/cache/recipe/2017/06/28/b6e916f0ffe2a330a0033a309a5145a01.jpg"/>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <!-- <div class="comment-box">
@@ -243,5 +246,7 @@
             </div>
         </div> -->
     </div>
+
+    <script src="{% static 'js/recipe.js' %}"></script>
 </body>
 </html>

@@ -172,3 +172,9 @@ body{
 
     border-top:1px solid rgb(230,230,230);
 }
+
+@media (max-width:1200px){
+    .content > .recipe-box > .list > .image > img{
+        width:250px;
+    }
+}

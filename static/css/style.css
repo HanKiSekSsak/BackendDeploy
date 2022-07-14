@@ -169,16 +169,11 @@ body > .content-box > .content > .top > div > div{
 }
 
 body > .content-box > .content > .top > div > div > img{
-    width:100%;
-    
+    height:80%;
     border-radius: 12px;
     
     /* Inside auto layout */
-    
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 1;
+
 }
 
 body > .content-box > .content > .top > div > div > p{
@@ -229,16 +224,11 @@ body > .content-box > .content > .end > div > div{
 }
 
 body > .content-box > .content > .end > div > div > img{
-    width:100%;
+    height:80%;
     
     border-radius: 12px;
     
     /* Inside auto layout */
-    
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 1;
 }
 
 body > .content-box > .content > .end > div > div > p{

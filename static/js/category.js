@@ -7,6 +7,7 @@ const SearchList = ['찌개', '파스타', '밥', '찜'];
 
 let SubmitList = (e)=>{
     category.value = e.target.innerHTML;
+    localStorage.setItem("category",category.value);
     secretForm.submit();
 }
 
