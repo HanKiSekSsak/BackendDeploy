@@ -24,7 +24,7 @@ window.onload = ()=>{
     .then(response=>{
         let splitData = response.data.split("---");
 
-        let ingredientData = splitData[1].split('\r\n');
+        let ingredientData = splitData[1].split('\n');
         console.log(splitData[1]);
         console.log(ingredientData);
         let recipeData = splitData[2].split("asdfasdfasfd");
@@ -32,7 +32,7 @@ window.onload = ()=>{
         console.log(imageData)
         let html = "";
         for(i in ingredientData){
-            if(ingredientData[i] == '') continue;
+            if(ingredientData[i] == '\n') continue;
             html += '<div class="list">';
             html += '<p>'+ingredientData[i].split("->")[0]+'</p>';
             html += '<p>'+ingredientData[i].split("->")[1]+'</p>'
