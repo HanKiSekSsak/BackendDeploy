@@ -32,7 +32,7 @@ window.onload = ()=>{
         console.log(imageData)
         let html = "";
         for(i in ingredientData){
-            if(ingredientData[i] == '\n') continue;
+            if(ingredientData[i] == '') continue;
             html += '<div class="list">';
             html += '<p>'+ingredientData[i].split("->")[0]+'</p>';
             html += '<p>'+ingredientData[i].split("->")[1]+'</p>'
@@ -42,7 +42,7 @@ window.onload = ()=>{
         
         html = ""
         for(i in recipeData){
-                let nowText = recipeData[i].replace(/\r\n/g, "");
+                let nowText = recipeData[i].replace(/\n/g, "");
                 if(nowText == '') continue;
                 html += '<div class="list"><div class="text">';
                 html += '<h2>' + (i ) + '.</h2>';
